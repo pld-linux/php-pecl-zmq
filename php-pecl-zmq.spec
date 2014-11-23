@@ -13,11 +13,14 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	74da2fc1aa83e6fa27acffb9a37596b9
 URL:		http://pecl.php.net/package/zmq/
-%{?with_tests:BuildRequires:    %{php_name}-cli}
 BuildRequires:	%{php_name}-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.666
 BuildRequires:	zeromq-devel
+%if %{with tests}
+BuildRequires:	%{php_name}-cli
+BuildRequires:	%{php_name}-pcre
+%endif
 %{?requires_php_extension}
 Provides:	php(zmq) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
