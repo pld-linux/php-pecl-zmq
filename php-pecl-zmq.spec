@@ -54,6 +54,7 @@ phpize
 grep %{modname} modules.log
 
 # run upstream test suite
+export NO_INTERACTION=1 REPORT_EXIT_STATUS=1 MALLOC_CHECK_=2
 %{__make} test \
 	PHP_EXECUTABLE=%{__php}
 %endif
