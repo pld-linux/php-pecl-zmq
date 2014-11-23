@@ -15,6 +15,7 @@ Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 URL:		http://pecl.php.net/package/zmq/
 %{?with_tests:BuildRequires:    %{php_name}-cli}
 BuildRequires:	%{php_name}-devel
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.666
 BuildRequires:	zeromq-devel
 %{?requires_php_extension}
